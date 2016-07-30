@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "ric_navigation")
+set(ric_navigation_MAINTAINER "caja <caja@todo.todo>")
+set(ric_navigation_DEPRECATED "")
+set(ric_navigation_VERSION "0.0.0")
+set(ric_navigation_BUILD_DEPENDS "roscpp" "rospy" "std_msgs")
+set(ric_navigation_RUN_DEPENDS "roscpp" "rospy" "std_msgs")
+set(ric_navigation_BUILDTOOL_DEPENDS "catkin")

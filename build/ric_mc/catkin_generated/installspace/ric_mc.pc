@@ -1,0 +1,8 @@
+prefix=/users/studs/bsc/2015/barakgo/catkin_ws/install
+
+Name: ric_mc
+Description: Description of ric_mc
+Version: 1.0.0
+Cflags: 
+Libs: -L/users/studs/bsc/2015/barakgo/catkin_ws/install/lib 
+Requires: 

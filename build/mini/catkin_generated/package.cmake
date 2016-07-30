@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "mini")
+set(mini_MAINTAINER "barakgo <barakgo@todo.todo>")
+set(mini_DEPRECATED "")
+set(mini_VERSION "0.0.0")
+set(mini_BUILD_DEPENDS )
+set(mini_RUN_DEPENDS )
+set(mini_BUILDTOOL_DEPENDS "catkin")

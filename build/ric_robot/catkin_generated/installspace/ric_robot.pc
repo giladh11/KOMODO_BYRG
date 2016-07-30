@@ -1,0 +1,8 @@
+prefix=/users/studs/bsc/2015/barakgo/catkin_ws/install
+
+Name: ric_robot
+Description: Description of ric_robot
+Version: 1.0.0
+Cflags: -I/users/studs/bsc/2015/barakgo/catkin_ws/install/include
+Libs: -L/users/studs/bsc/2015/barakgo/catkin_ws/install/lib 
+Requires: message_runtime

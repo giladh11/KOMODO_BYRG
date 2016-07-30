@@ -1,0 +1,8 @@
+prefix=/users/studs/bsc/2015/barakgo/catkin_ws/devel
+
+Name: image_transport
+Description: Description of image_transport
+Version: 1.11.10
+Cflags: -I/users/studs/bsc/2015/barakgo/catkin_ws/src/image_common/image_transport/include
+Libs: -L/users/studs/bsc/2015/barakgo/catkin_ws/devel/lib -limage_transport
+Requires: message_filters pluginlib rosconsole roscpp roslib sensor_msgs

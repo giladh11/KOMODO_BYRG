@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "komodo_2dnav")
+set(komodo_2dnav_MAINTAINER "caja <caja@todo.todo>")
+set(komodo_2dnav_DEPRECATED "")
+set(komodo_2dnav_VERSION "0.0.0")
+set(komodo_2dnav_BUILD_DEPENDS "ric_base_station" "ric_board" "ric_description" "ric_gazebo" "ric_robot")
+set(komodo_2dnav_RUN_DEPENDS "ric_base_station" "ric_board" "ric_description" "ric_gazebo" "ric_robot")
+set(komodo_2dnav_BUILDTOOL_DEPENDS "catkin")

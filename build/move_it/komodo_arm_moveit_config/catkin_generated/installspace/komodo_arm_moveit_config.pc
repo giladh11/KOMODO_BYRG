@@ -1,0 +1,8 @@
+prefix=/users/studs/bsc/2015/barakgo/catkin_ws/install
+
+Name: komodo_arm_moveit_config
+Description: Description of komodo_arm_moveit_config
+Version: 0.2.0
+Cflags: 
+Libs: -L/users/studs/bsc/2015/barakgo/catkin_ws/install/lib 
+Requires: 

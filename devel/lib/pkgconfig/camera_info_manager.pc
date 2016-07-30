@@ -1,0 +1,8 @@
+prefix=/users/studs/bsc/2015/barakgo/catkin_ws/devel
+
+Name: camera_info_manager
+Description: Description of camera_info_manager
+Version: 1.11.10
+Cflags: -I/users/studs/bsc/2015/barakgo/catkin_ws/src/image_common/camera_info_manager/include -I/usr/local/include
+Libs: -L/users/studs/bsc/2015/barakgo/catkin_ws/devel/lib -lcamera_info_manager
+Requires: roscpp sensor_msgs

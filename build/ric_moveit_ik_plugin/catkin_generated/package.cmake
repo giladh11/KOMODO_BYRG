@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "ric_moveit_ik_plugin")
+set(ric_moveit_ik_plugin_MAINTAINER "tom <tom@todo.todo>")
+set(ric_moveit_ik_plugin_DEPRECATED "")
+set(ric_moveit_ik_plugin_VERSION "0.0.0")
+set(ric_moveit_ik_plugin_BUILD_DEPENDS "moveit_core" "liblapack-dev" "roscpp" "tf_conversions" "pluginlib")
+set(ric_moveit_ik_plugin_RUN_DEPENDS "moveit_core" "liblapack-dev" "roscpp" "tf_conversions" "pluginlib")
+set(ric_moveit_ik_plugin_BUILDTOOL_DEPENDS "catkin")

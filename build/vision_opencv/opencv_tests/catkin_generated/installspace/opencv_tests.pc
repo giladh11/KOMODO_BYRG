@@ -1,0 +1,8 @@
+prefix=/users/studs/bsc/2015/barakgo/catkin_ws/install
+
+Name: opencv_tests
+Description: Description of opencv_tests
+Version: 1.12.1
+Cflags: 
+Libs: -L/users/studs/bsc/2015/barakgo/catkin_ws/install/lib 
+Requires: 

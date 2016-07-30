@@ -1,0 +1,1899 @@
+<sdf version='1.4'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='komodo_1'>
+      <link name='dummy_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0.00746355 0.000195313 0.244582 0 -0 0</pose>
+          <mass>13.9073</mass>
+          <inertia>
+            <ixx>1.04639</ixx>
+            <ixy>-0.00111871</ixy>
+            <ixz>0.0457727</ixz>
+            <iyy>1.21254</iyy>
+            <iyz>0.000147165</iyz>
+            <izz>0.378865</izz>
+          </inertia>
+        </inertial>
+        <collision name='dummy_link_collision_Arm_base_link'>
+          <pose>-0.11225 0 0.167161 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Arm_base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='dummy_link_collision_Asus_Camera_link'>
+          <pose>0.031208 0 0.863395 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Asus_Camera_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='dummy_link_collision_Front_Camera_link'>
+          <pose>0.26225 0.0875 0.1 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Front_Camera_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='dummy_link_collision_Laser_link'>
+          <pose>0.234263 0 0.145827 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Laser_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='dummy_link_collision_Left_URF_link'>
+          <pose>-0.0223641 0.13725 0.138508 0 -1.52736e-16 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Left_URF_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <collision name='dummy_link_collision_Rear_Camera_link'>
+          <pose>-0.079292 0 0.521661 0 -0 3.13319</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Rear_Camera_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='dummy_link_collision_Rear_URF_link'>
+          <pose>-0.2675 -5.08e-05 0.108 -2.22045e-16 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Rear_URF_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <collision name='dummy_link_collision_Right_URF_link'>
+          <pose>-0.0222625 -0.13725 0.138508 -2.46519e-32 2.91353e-16 -1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Right_URF_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <collision name='dummy_link_collision_Top_Camera_link'>
+          <pose>-0.050042 0.015283 0.827161 0 -1.57 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Top_Camera_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='dummy_link_collision_base_link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='dummy_link_collision_sensors_unit_link'>
+          <pose>-0.00199997 0 0.0835 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/sensors_unit_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='dummy_link_visual_Arm_base_link'>
+          <pose>-0.11225 0 0.167161 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Arm_base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='dummy_link_visual_Asus_Camera_link'>
+          <pose>0.031208 0 0.863395 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Asus_Camera_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='dummy_link_visual_Front_Camera_link'>
+          <pose>0.26225 0.0875 0.1 -1.5708 1.66533e-16 -1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Front_Camera_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='dummy_link_visual_Laser_link'>
+          <pose>0.234263 0 0.145827 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Laser_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='dummy_link_visual_Left_URF_link'>
+          <pose>-0.0223641 0.13725 0.138508 0 -1.52736e-16 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Left_URF_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='dummy_link_visual_Rear_Camera_link'>
+          <pose>-0.079292 0 0.521661 1.57 -0 -1.58</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Rear_Camera_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='dummy_link_visual_Rear_URF_link'>
+          <pose>-0.2675 -5.08e-05 0.108 -2.22045e-16 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Rear_URF_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='dummy_link_visual_Right_URF_link'>
+          <pose>-0.0222625 -0.13725 0.138508 -2.46519e-32 2.91353e-16 -1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Right_URF_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='dummy_link_visual_Top_Camera_link'>
+          <pose>-0.050042 0.015283 0.827161 1.57 -0.00345758 -1.57079</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Top_Camera_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='dummy_link_visual_base_link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='dummy_link_visual_sensors_unit_link'>
+          <pose>-0.00199997 0 0.0835 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/sensors_unit_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <sensor name='Asus_Camera_link' type='depth'>
+          <visualize>1</visualize>
+          <update_rate>20</update_rate>
+          <camera name='__default__'>
+            <horizontal_fov>2</horizontal_fov>
+            <image>
+              <format>R8G8B8</format>
+              <width>640</width>
+              <height>480</height>
+            </image>
+            <clip>
+              <near>0.5</near>
+              <far>9</far>
+            </clip>
+          </camera>
+          <plugin name='Asus_Camera_link_camera_controller' filename='libgazebo_ros_openni_kinect.so'>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>20</updateRate>
+            <cameraName>Asus_Camera</cameraName>
+            <imageTopicName>rgb/image_raw</imageTopicName>
+            <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+            <depthImageTopicName>depth/image_raw</depthImageTopicName>
+            <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+            <pointCloudTopicName>depth/rotated_points</pointCloudTopicName>
+            <pointCloudCutoff>0.4</pointCloudCutoff>
+            <pointCloudCutoffMax>50.0</pointCloudCutoffMax>
+            <frameName>/Asus_Camera_link</frameName>
+            <distortion_k1>0.0</distortion_k1>
+            <distortion_k2>0.0</distortion_k2>
+            <distortion_k3>0.0</distortion_k3>
+            <distortion_t1>0.0</distortion_t1>
+            <distortion_t2>0.0</distortion_t2>
+            <robotNamespace>/komodo_1/</robotNamespace>
+          </plugin>
+          <pose>0.031208 5 0.863395 0 -0 0</pose>
+        </sensor>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <sensor name='camera1' type='camera'>
+          <visualize>0</visualize>
+          <update_rate>30</update_rate>
+          <camera name='rear_camera'>
+            <horizontal_fov>2</horizontal_fov>
+            <image>
+              <width>1800</width>
+              <height>1800</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>9</far>
+            </clip>
+          </camera>
+          <plugin name='libgazebo' filename='libgazebo_ros_camera.so'>
+            <alwaysOn>true</alwaysOn>
+            <robotNamespace>komodo_1</robotNamespace>
+            <cameraName>rear_camera</cameraName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>Rear_Camera_link</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+          </plugin>
+          <pose>-0.079292 0 0.521661 0 -0 3.13319</pose>
+        </sensor>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <sensor name='camera1' type='camera'>
+          <visualize>0</visualize>
+          <update_rate>30</update_rate>
+          <camera name='rear_camera'>
+            <horizontal_fov>2</horizontal_fov>
+            <image>
+              <width>1800</width>
+              <height>1800</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>9</far>
+            </clip>
+          </camera>
+          <plugin name='libgazebo' filename='libgazebo_ros_camera.so'>
+            <alwaysOn>true</alwaysOn>
+            <robotNamespace>komodo_1</robotNamespace>
+            <cameraName>top_camera</cameraName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>Top_Camera_link</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+          </plugin>
+          <pose>-0.050042 0.015283 0.827161 0 -1.57 0</pose>
+        </sensor>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <sensor name='camera2' type='camera'>
+          <visualize>0</visualize>
+          <update_rate>30</update_rate>
+          <camera name='Front_Camera'>
+            <horizontal_fov>2</horizontal_fov>
+            <image>
+              <width>1800</width>
+              <height>1800</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>9</far>
+            </clip>
+          </camera>
+          <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
+            <alwaysOn>true</alwaysOn>
+            <robotNamespace>komodo_1</robotNamespace>
+            <cameraName>Front_Camera</cameraName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>Front_Camera_link</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+          </plugin>
+          <pose>0.26225 0.0875 0.1 0 -0 0</pose>
+        </sensor>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <gravity>1</gravity>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='elevator_link'>
+        <pose>-0.010792 0 0.241161 0 -0 0</pose>
+        <inertial>
+          <pose>0.0954672 1.91586e-06 -0.0185743 0 -0 0</pose>
+          <mass>1.09058</mass>
+          <inertia>
+            <ixx>0.000835857</ixx>
+            <ixy>5.81871e-08</ixy>
+            <ixz>-3.13494e-05</ixz>
+            <iyy>0.00128841</iyy>
+            <iyz>1.45397e-07</iyz>
+            <izz>0.00136461</izz>
+          </inertia>
+        </inertial>
+        <collision name='elevator_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/elevator_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='elevator_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/elevator_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='elevator_joint' type='prismatic'>
+        <child>elevator_link</child>
+        <parent>dummy_link</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0.5</upper>
+            <effort>100</effort>
+            <velocity>1e-15</velocity>
+          </limit>
+          <dynamics>
+            <damping>1000</damping>
+          </dynamics>
+        </axis>
+        <physics>
+          <ode>
+            <fudge_factor>100.99</fudge_factor>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+          </ode>
+        </physics>
+      </joint>
+      <link name='base_rotation_link'>
+        <pose>0.102208 0 0.237161 -5.4637e-16 1.34659e-15 -2.1923e-31</pose>
+        <inertial>
+          <pose>-6.93889e-17 1.46538e-17 0.0623332 0 -0 0</pose>
+          <mass>0.474</mass>
+          <inertia>
+            <ixx>0.00159426</ixx>
+            <ixy>-8.40269e-08</ixy>
+            <ixz>-1.60926e-19</ixz>
+            <iyy>0.000605522</iyy>
+            <iyz>-6.08768e-19</iyz>
+            <izz>0.00123388</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_rotation_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/base_rotation_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='base_rotation_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/base_rotation_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='base_rotation_joint' type='revolute'>
+        <child>base_rotation_link</child>
+        <parent>elevator_link</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.57079</lower>
+            <upper>1.57079</upper>
+            <effort>10</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='shoulder_link'>
+        <pose>0.102208 4.56219e-17 0.320661 -5.4637e-16 1.34659e-15 -2.1923e-31</pose>
+        <inertial>
+          <pose>-4.66248e-06 -9.82289e-05 0.0772888 0 -0 0</pose>
+          <mass>0.191481</mass>
+          <inertia>
+            <ixx>0.00107302</ixx>
+            <ixy>-2.97891e-07</ixy>
+            <ixz>-2.01215e-08</ixz>
+            <iyy>0.000975953</iyy>
+            <iyz>-1.19602e-06</iyz>
+            <izz>0.00021766</izz>
+          </inertia>
+        </inertial>
+        <collision name='shoulder_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/shoulder_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='shoulder_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/shoulder_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='shoulder_joint' type='revolute'>
+        <child>shoulder_link</child>
+        <parent>base_rotation_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.69297</upper>
+            <effort>10</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='elbow1_link'>
+        <pose>0.102208 -0.000251156 0.586966 -5.4637e-16 1.34659e-15 -2.1923e-31</pose>
+        <inertial>
+          <pose>3.38829e-05 2.66621e-06 0.0239321 0 -0 0</pose>
+          <mass>0.235</mass>
+          <inertia>
+            <ixx>0.00111563</ixx>
+            <ixy>3.16191e-07</ixy>
+            <ixz>2.89268e-06</ixz>
+            <iyy>0.00114606</iyy>
+            <iyz>-8.11917e-08</iyz>
+            <izz>0.000237163</izz>
+          </inertia>
+        </inertial>
+        <collision name='elbow1_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/elbow1_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='elbow1_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/elbow1_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='elbow1_joint' type='revolute'>
+        <child>elbow1_link</child>
+        <parent>shoulder_link</parent>
+        <axis>
+          <xyz>-1 0 0</xyz>
+          <limit>
+            <lower>-2.4434</lower>
+            <upper>2.4434</upper>
+            <effort>10</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='elbow2_link'>
+        <pose>0.102208 -0.000251156 0.810966 -5.4637e-16 1.34659e-15 -2.1923e-31</pose>
+        <inertial>
+          <pose>0.000512285 -2.29085e-05 0.0885119 0 -0 0</pose>
+          <mass>0.25</mass>
+          <inertia>
+            <ixx>0.0110437</ixx>
+            <ixy>-3.04259e-07</ixy>
+            <ixz>7.91667e-05</ixz>
+            <iyy>0.0110599</iyy>
+            <iyz>-1.22468e-06</iyz>
+            <izz>0.000331598</izz>
+          </inertia>
+        </inertial>
+        <collision name='elbow2_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/elbow2_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='elbow2_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/elbow2_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='elbow2_joint' type='revolute'>
+        <child>elbow2_link</child>
+        <parent>elbow1_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-2.4434</lower>
+            <upper>2.4434</upper>
+            <effort>10</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='wrist_link'>
+        <pose>0.115308 -0.000251156 1.05572 3.14159 -1.57079 -3.14159</pose>
+        <inertial>
+          <pose>0.0290615 2.04148e-06 0.0166629 0 -0 0</pose>
+          <mass>0.287741</mass>
+          <inertia>
+            <ixx>0.000699632</ixx>
+            <ixy>8.84413e-09</ixy>
+            <ixz>1.71731e-05</ixz>
+            <iyy>0.000393143</iyy>
+            <iyz>-2.07107e-08</iyz>
+            <izz>0.000579339</izz>
+          </inertia>
+        </inertial>
+        <collision name='wrist_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/wrist_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='wrist_link_collision_Creative_Camera_link'>
+          <pose>0.026025 0 0.052 -1.41059e-37 -0 -6.20247e-16</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Creative_Camera_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wrist_link_visual'>
+          <pose>0 0 0 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/wrist_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='wrist_link_visual_Creative_Camera_link'>
+          <pose>0.026025 0 0.052 -1.41059e-37 -0 -6.20247e-16</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/Creative_Camera_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <gravity>1</gravity>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <sensor name='Creative_Camera_link' type='depth'>
+          <visualize>1</visualize>
+          <update_rate>20</update_rate>
+          <camera name='__default__'>
+            <horizontal_fov>2</horizontal_fov>
+            <image>
+              <format>R8G8B8</format>
+              <width>640</width>
+              <height>480</height>
+            </image>
+            <clip>
+              <near>0.5</near>
+              <far>9</far>
+            </clip>
+          </camera>
+          <plugin name='Creative_Camera_link_camera_controller' filename='libgazebo_ros_openni_kinect.so'>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>20</updateRate>
+            <cameraName>Creative_Camera</cameraName>
+            <imageTopicName>rgb/image_raw</imageTopicName>
+            <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+            <depthImageTopicName>depth/image_raw</depthImageTopicName>
+            <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+            <pointCloudTopicName>depth/rotated_points</pointCloudTopicName>
+            <pointCloudCutoff>0.4</pointCloudCutoff>
+            <pointCloudCutoffMax>50.0</pointCloudCutoffMax>
+            <frameName>/Creative_Camera_link</frameName>
+            <distortion_k1>0.0</distortion_k1>
+            <distortion_k2>0.0</distortion_k2>
+            <distortion_k3>0.0</distortion_k3>
+            <distortion_t1>0.0</distortion_t1>
+            <distortion_t2>0.0</distortion_t2>
+            <robotNamespace>/komodo_1/</robotNamespace>
+          </plugin>
+          <pose>0.026025 0 0.052 -1.41059e-37 -0 -6.20247e-16</pose>
+        </sensor>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='wrist_joint' type='revolute'>
+        <child>wrist_link</child>
+        <parent>elbow2_link</parent>
+        <axis>
+          <xyz>1e-06 0 1</xyz>
+          <limit>
+            <lower>-1.91986</lower>
+            <upper>1.91986</upper>
+            <effort>10</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='left_finger_link'>
+        <pose>0.115308 0.0207488 1.09797 -5.46374e-16 1.33227e-15 -1.49342e-25</pose>
+        <inertial>
+          <pose>3.72404e-08 0.0148726 0.0333609 0 -0 0</pose>
+          <mass>0.0045</mass>
+          <inertia>
+            <ixx>9.7735e-06</ixx>
+            <ixy>8.75184e-13</ixy>
+            <ixz>7.1723e-12</ixz>
+            <iyy>1.16654e-05</iyy>
+            <iyz>7.84012e-07</iyz>
+            <izz>3.34837e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='left_finger_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/left_finger_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='left_finger_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/left_finger_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='left_finger_joint' type='revolute'>
+        <child>left_finger_link</child>
+        <parent>wrist_link</parent>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-0.87266</lower>
+            <upper>0.87266</upper>
+            <effort>10</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='right_finger_link'>
+        <pose>0.115308 -0.0212512 1.09797 -5.46374e-16 1.33227e-15 -1.49342e-25</pose>
+        <inertial>
+          <pose>3.72404e-08 -0.0148726 0.0333609 0 -0 0</pose>
+          <mass>0.0045</mass>
+          <inertia>
+            <ixx>9.7735e-06</ixx>
+            <ixy>-8.75184e-13</ixy>
+            <ixz>7.1723e-12</ixz>
+            <iyy>1.16654e-05</iyy>
+            <iyz>-7.84012e-07</iyz>
+            <izz>3.34837e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='right_finger_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/right_finger_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='right_finger_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/right_finger_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='right_finger_joint' type='revolute'>
+        <child>right_finger_link</child>
+        <parent>wrist_link</parent>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-0.87266</lower>
+            <upper>0.87266</upper>
+            <effort>10</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='FL_Wheel_link'>
+        <pose>0.174 0.2009 0 0 -1.52736e-16 1.5708</pose>
+        <inertial>
+          <pose>-0.00125662 1.4995e-05 2.59231e-06 0 -0 0</pose>
+          <mass>3.83428</mass>
+          <inertia>
+            <ixx>0.0296526</ixx>
+            <ixy>2.35765e-06</ixy>
+            <ixz>-1.51001e-06</ixz>
+            <iyy>0.0163721</iyy>
+            <iyz>-1.22544e-06</iyz>
+            <izz>0.016375</izz>
+          </inertia>
+        </inertial>
+        <collision name='FL_Wheel_link_collision'>
+          <pose>0 0 0 0 1.5 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.05</length>
+              <radius>0.1</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='FL_Wheel_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/FL_Wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='FL_Wheel_joint' type='revolute'>
+        <child>FL_Wheel_link</child>
+        <parent>dummy_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='FR_Wheel_link'>
+        <pose>0.174 -0.2009 0 -2.46519e-32 2.91353e-16 -1.5708</pose>
+        <inertial>
+          <pose>-0.00125662 1.11356e-05 1.03717e-05 0 -0 0</pose>
+          <mass>3.83427</mass>
+          <inertia>
+            <ixx>0.0296525</ixx>
+            <ixy>2.79965e-06</ixy>
+            <ixz>2.53737e-08</ixz>
+            <iyy>0.0163718</iyy>
+            <iyz>8.36492e-07</iyz>
+            <izz>0.0163752</izz>
+          </inertia>
+        </inertial>
+        <collision name='FR_Wheel_link_collision'>
+          <pose>0 0 0 0 1.5 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.05</length>
+              <radius>0.1</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='FR_Wheel_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/FR_Wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='FR_Wheel_joint' type='revolute'>
+        <child>FR_Wheel_link</child>
+        <parent>dummy_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='RL_Wheel_link'>
+        <pose>-0.156 0.2009 0 0 -1.52736e-16 1.5708</pose>
+        <inertial>
+          <pose>-0.00125662 1.51826e-05 -1.03149e-06 0 -0 0</pose>
+          <mass>3.83428</mass>
+          <inertia>
+            <ixx>0.0296526</ixx>
+            <ixy>1.93315e-06</ixy>
+            <ixz>-2.02526e-06</ixz>
+            <iyy>0.0163728</iyy>
+            <iyz>-1.75559e-06</iyz>
+            <izz>0.0163742</izz>
+          </inertia>
+        </inertial>
+        <collision name='RL_Wheel_link_collision'>
+          <pose>0 0 0 0 1.5 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.05</length>
+              <radius>0.1</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='RL_Wheel_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/RL_Wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='RL_Wheel_joint' type='revolute'>
+        <child>RL_Wheel_link</child>
+        <parent>dummy_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='RR_Wheel_link'>
+        <pose>-0.156 -0.2009 0 -2.46519e-32 2.91353e-16 -1.5708</pose>
+        <inertial>
+          <pose>-0.00125662 1.11356e-05 1.03716e-05 0 -0 0</pose>
+          <mass>3.83427</mass>
+          <inertia>
+            <ixx>0.0296525</ixx>
+            <ixy>2.79965e-06</ixy>
+            <ixz>2.53706e-08</ixz>
+            <iyy>0.0163718</iyy>
+            <iyz>8.36482e-07</iyz>
+            <izz>0.0163752</izz>
+          </inertia>
+        </inertial>
+        <collision name='RR_Wheel_link_collision'>
+          <pose>0 0 0 0 1.5 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.05</length>
+              <radius>0.1</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='RR_Wheel_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/users/studs/bsc/2015/barakgo/catkin_ws/src/ric_description/komodo/meshes_elevator/RR_Wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='RR_Wheel_joint' type='revolute'>
+        <child>RR_Wheel_link</child>
+        <parent>dummy_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <robotNamespace>komodo_1</robotNamespace>
+      </plugin>
+      <static>0</static>
+      <plugin name='skid_steer_drive_controller' filename='libgazebo_ros_skid_steer_drive.so'>
+        <always_on>1</always_on>
+        <updateRate>50.0</updateRate>
+        <robotNamespace>/komodo_1</robotNamespace>
+        <broadcastTF>1</broadcastTF>
+        <leftFrontJoint>FL_Wheel_joint</leftFrontJoint>
+        <rightFrontJoint>FR_Wheel_joint</rightFrontJoint>
+        <leftRearJoint>RL_Wheel_joint</leftRearJoint>
+        <rightRearJoint>RR_Wheel_joint</rightRearJoint>
+        <wheelSeparation>0.5</wheelSeparation>
+        <wheelDiameter>0.2</wheelDiameter>
+        <robotBaseFrame>dummy_link</robotBaseFrame>
+        <odometryTopic>diff_driver/odometry</odometryTopic>
+        <odometryFrame>odom_link</odometryFrame>
+        <torque>20</torque>
+        <commandTopic>diff_driver/command</commandTopic>
+      </plugin>
+      <pose>0 0 0.1 0 -0 0</pose>
+    </model>
+    <model name='cube_20k'>
+      <link name='link'>
+        <pose>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>1.47664 -0.462382 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <model name='cube_20k_0'>
+      <link name='link'>
+        <pose>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>1.48754 0.545721 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <model name='cube_20k_1'>
+      <link name='link'>
+        <pose>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>2.52059 -0.475687 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <model name='cube_20k_2'>
+      <link name='link'>
+        <pose>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>2.49851 0.560612 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <state world_name='default'>
+      <sim_time>304 788000000</sim_time>
+      <real_time>211 604594643</real_time>
+      <wall_time>1450892091 586675808</wall_time>
+      <model name='cube_20k'>
+        <pose>-1.4949 -0.466902 -0 -0 -0 -2.4e-05</pose>
+        <link name='link'>
+          <pose>-1.4949 -0.466902 0.5 -0 -0 -2.4e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cube_20k_0'>
+        <pose>-1.4902 0.568163 -0 -0 -0 -2e-05</pose>
+        <link name='link'>
+          <pose>-1.4902 0.568163 0.5 -0 -0 -2e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cube_20k_1'>
+        <pose>-2.61376 -0.479355 -0 3.23117e-27 1e-06 -2.6e-05</pose>
+        <link name='link'>
+          <pose>-2.61376 -0.479355 0.5 3.23117e-27 1e-06 -2.6e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cube_20k_2'>
+        <pose>-2.53591 0.554623 -0 -3.23117e-27 1e-06 -1.8e-05</pose>
+        <link name='link'>
+          <pose>-2.53591 0.554623 0.5 -3.23117e-27 1e-06 -1.8e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='komodo_1'>
+        <pose>0.333783 7.43921 0.101517 -4e-06 5.29396e-23 -3.07152</pose>
+        <link name='FL_Wheel_link'>
+          <pose>0.174275 7.22663 0.101516 -0.002637 1.8e-05 -1.50073</pose>
+          <velocity>0.000129 -0.000521 -0.001755 0.00503 0.000166 0.000272</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='FR_Wheel_link'>
+          <pose>0.146145 7.62744 0.101518 0.012208 1.2e-05 1.64086</pose>
+          <velocity>3.6e-05 -0.00051 0.001639 0.005136 0.000382 0.000202</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='RL_Wheel_link'>
+          <pose>0.503465 7.24973 0.101516 0.0038 2e-05 -1.50073</pose>
+          <velocity>0.000131 -0.00045 -0.0017 0.004525 0.000119 0.00021</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='RR_Wheel_link'>
+          <pose>0.475335 7.65054 0.101518 0.007202 1.5e-05 1.64086</pose>
+          <velocity>2.1e-05 -0.000442 0.001711 0.004495 0.000241 0.000212</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='base_rotation_link'>
+          <pose>0.231827 7.43206 0.338677 0 -3e-06 -3.07281</pose>
+          <velocity>0.000252 -0.002247 -4.1e-05 0.005324 0.000924 -0.003953</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='dummy_link'>
+          <pose>0.333783 7.43921 0.101517 -4e-06 5.29396e-23 -3.07152</pose>
+          <velocity>7.4e-05 -0.000332 -3.2e-05 0.008354 0.0004 0.000261</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='elbow1_link'>
+          <pose>-0.004506 7.41477 0.543668 -0.018166 1.09706 -3.07279</pose>
+          <velocity>0.002748 0.000734 0.004695 -0.005593 0.016951 -0.001483</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='elbow2_link'>
+          <pose>-0.012345 7.41841 0.02629 -0.025001 -1.23292 -3.03304</pose>
+          <velocity>-8.8e-05 9.4e-05 0.009813 -0.002558 -0.0044 -0.002319</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='elevator_link'>
+          <pose>0.344549 7.43997 0.342677 -1e-06 -4e-06 -3.07153</pose>
+          <velocity>0.000198 -0.00234 -0.000117 0.005421 0.001109 -0.000825</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='left_finger_link'>
+          <pose>0.255717 7.35052 0.131077 -0.18533 -1.23284 -3.03031</pose>
+          <velocity>-0.002082 0.00042 -0.001483 0.000183 -0.016261 -0.001852</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='right_finger_link'>
+          <pose>0.248207 7.48884 0.133852 0.036285 -1.23284 -3.03025</pose>
+          <velocity>-0.001925 -0.000343 -0.001237 0.003441 -0.015596 -0.001478</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='shoulder_link'>
+          <pose>0.231827 7.43206 0.422178 1.6e-05 1.09704 -3.0728</pose>
+          <velocity>0.000402 -0.00268 3.9e-05 -0.00191 0.019153 -0.000246</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wrist_link'>
+          <pose>0.213476 7.43693 0.119721 -3.13189 -0.337797 0.082056</pose>
+          <velocity>-0.001311 4.1e-05 0.001983 0.001342 -0.012637 -0.001508</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>8.45821 -3.64381 5.01348 0 0.275643 2.35619</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+  </world>
+</sdf>

@@ -1,0 +1,8 @@
+prefix=/users/studs/bsc/2015/barakgo/catkin_ws/devel
+
+Name: ric_moveit_ik_plugin
+Description: Description of ric_moveit_ik_plugin
+Version: 0.0.0
+Cflags: 
+Libs: -L/users/studs/bsc/2015/barakgo/catkin_ws/devel/lib 
+Requires: moveit_core pluginlib roscpp tf_conversions

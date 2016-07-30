@@ -1,0 +1,8 @@
+prefix=/users/studs/bsc/2015/barakgo/catkin_ws/install
+
+Name: polled_camera
+Description: Description of polled_camera
+Version: 1.11.10
+Cflags: -I/users/studs/bsc/2015/barakgo/catkin_ws/install/include
+Libs: -L/users/studs/bsc/2015/barakgo/catkin_ws/install/lib -lpolled_camera
+Requires: roscpp sensor_msgs
